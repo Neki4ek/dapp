@@ -1,7 +1,6 @@
 import { ethers } from "ethers";
 import { useState } from 'react';
 
-// eslint-disable-next-line react/prop-types
 function BalanceReader({ provider }) {
     const [address, setAddress] = useState("");
     const [balance, setBalance] = useState(0);
@@ -10,7 +9,6 @@ function BalanceReader({ provider }) {
         console.log("address: ", address);
         setAddress(address);
     try {
-        // eslint-disable-next-line react/prop-types
         const balance = await provider.getBalance(address);
         console.log("balance: ", balance);
         const newBalance = ethers.formatEther(balance);
